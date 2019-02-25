@@ -1,5 +1,6 @@
 import piggy from '../porco.png'
 import React from 'react'
+import DropdownSort from './DropdownSort'
 
 const Nav = props => {
 	return (
@@ -12,8 +13,7 @@ const Nav = props => {
 			</div>
 			<span className="normalText">A React App for County Fair Hog Fans</span><br/>
 			<input type="text" onChange={props.searchHogs} /><br/>
-			<button name="filterByName" onClick={props.filterByName}>Filter by Name</button>
-			<button name="filterByWeight" onClick={props.filterByWeight}>Filter by Weight</button>
+			<DropdownSort filterHogs={props.filterHogs} />
 		</div>
 	)
 }
