@@ -12,12 +12,12 @@ export default class HogDetails extends Component {
     return (
       <div className="hog-details" >
       <div className="meta">
-        <span className="weight">weight: {this.props.hog["weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water"]}</span>
+        <span className="normalText weight">weight: {this.props.hog["weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water"]}</span>
       </div>
-      <div className="specialty">
+      <div className="specialty hoggyText">
         Specialty: {this.props.hog.specialty}
       </div>
-      <div className="medal">
+      <div className="medal achievementText">
         Highest Medal Achieved: {this.props.hog['highest medal achieved']}
       </div>
       <div className="extra content">

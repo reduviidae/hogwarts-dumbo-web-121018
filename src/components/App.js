@@ -3,6 +3,7 @@ import '../App.css';
 import Nav from './Nav'
 import hogs from '../porkers_data';
 import HogContainer from './HogContainer';
+import HogGifContainer from './HogGifContainer'
 
 class App extends Component {
   constructor(props){
@@ -13,22 +14,7 @@ class App extends Component {
   state ={
     hogs: hogs,
     searchTerm: "",
-    filteredHogs: hogs,
-    hogGIFs: []
-  }
-
-  componentDidMount() {
-    this.hogGIFs()
-  }
-
-  hogGIFs = () => {
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=Y4yujhO9qYmiY5JJNYwUzLKhDCkP6X04&q=hog&limit=25&offset=0&rating=G&lang=en`)
-    .then(res => res.json)
-    .then(gifObject => this.setState({ hogGIFs: gifObject }))
-  }
-
-  showGifs = gifObject => {
-    console.log(gifObject)
+    filteredHogs: hogs
   }
 
   searchHogs = e => {
@@ -47,7 +33,7 @@ class App extends Component {
       key = "name";
       break;
       default:
-      null
+      return null
     }
     const filteredHogs = hogs.sort(function(a,b){
       let textA = a[key];
@@ -63,6 +49,7 @@ class App extends Component {
       <div className="App">
           < Nav searchHogs={this.searchHogs} filterHogs={this.filterHogs} hogs={this.state.hogs}/>
           < HogContainer hogs={this.state.filteredHogs}/>
+          < HogGifContainer />
       </div>
     )
   }

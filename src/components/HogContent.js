@@ -35,14 +35,13 @@ export default class HogContent extends Component {
   render(){
 
     return(
-      <div className="pigtiles card ui eight wide column" >
+      <div className="pigTile card ui eight wide column" >
         <button onClick={this.props.hideHog}>
             x
         </button>
         <div className="content">
           {this.hogImgs()}
           <a className="header" onClick={this.showHogDetails}> {this.props.hog.name} </a>
-
         </div>
           {this.state.showDetails ? <HogDetails hog={this.props.hog} /> : null}
       </div>
